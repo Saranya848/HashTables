@@ -1,7 +1,7 @@
 package com.hashtable;
 import java.util.*;
 public class HashMapMain {
-
+	//static int size;
 	/**
 	 * main method to implement the methods
 	 * 1. Here we have passed the string and saved it in array of words by converting it into lower case and splitting
@@ -12,7 +12,8 @@ public class HashMapMain {
 	 */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		//System.out.println("Enter size of Bucket :" + HashMap.numberOfBucket);
+		//System.out.println("Enter size of Bucket :");
+		//size = input.nextInt();
 		System.out.println("Enter String :");	
 		String string = input.nextLine();
 		String[] words = string.toLowerCase().split(" ");

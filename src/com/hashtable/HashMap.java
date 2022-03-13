@@ -12,7 +12,7 @@ public class HashMap<K, V> {
 		 * 1. We have made the arrayList of size 10 Then we are creating a new ArrayList
 		 * and adding the null vale to it
 		 */
-		int numberOfBucket = 3;
+		numberOfBucket = 10;
 		arrayList = new ArrayList<>();
 		for (int i = 0; i < numberOfBucket; i++) {
 			arrayList.add(null);
