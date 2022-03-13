@@ -2,23 +2,17 @@ package com.hashtable;
 
 import java.util.*;
 
-public class HashMap <K,V>
-	{
+public class HashMap<K, V> {
 
-	/**
-	 * The numberOfBucket is the total size of the array And we have created the
-	 * arrayList of LinkedList
-	 */
-	private final int numberOfBucket;
 	ArrayList<LinkedList<K>> arrayList;
+	private int numberOfBucket;
 
 	public HashMap() {
 		/**
 		 * 1. We have made the arrayList of size 10 Then we are creating a new ArrayList
 		 * and adding the null vale to it
 		 */
-
-		numberOfBucket = 10;
+		int numberOfBucket = 3;
 		arrayList = new ArrayList<>();
 		for (int i = 0; i < numberOfBucket; i++) {
 			arrayList.add(null);
@@ -45,7 +39,7 @@ public class HashMap <K,V>
 		if (linkedList == null) {
 			return null;
 		}
-		MapNode<K, V> mapNode = (MapNode<K, V>) linkedList.search(key);
+		MyMapNode<K, V> mapNode = (MyMapNode<K, V>) linkedList.search(key);
 		return mapNode == null ? null : mapNode.getValue();
 	}
 
@@ -86,9 +80,9 @@ public class HashMap <K,V>
 			this.arrayList.set(index, linkedList);
 		}
 
-		MapNode<K, V> myMapNode = (MapNode<K, V>) linkedList.search(key);
+		MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) linkedList.search(key);
 		if (myMapNode == null) {
-			myMapNode = new MapNode<>(key, value);
+			myMapNode = new MyMapNode<>(key, value);
 			linkedList.append(myMapNode);
 		} else {
 			myMapNode.setValue(value);

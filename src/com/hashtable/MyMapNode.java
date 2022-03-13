@@ -1,17 +1,27 @@
 package com.hashtable;
+interface Node<K> {
 
+	K getKey();
+
+	void setKey(K key);
+
+	void setNext(Node<K> next);
+
+	Node<K> getNext();
+
+}
 /**
  * it is interface to declare methods which is implemented in My mapnode
  * 
  * @return
  */
-public class MapNode<K, V> implements Node<K> {
+public class MyMapNode<K, V> implements Node<K> {
 	K key;
 	V value;
 	Node<K> next;
 
 	// constructor
-	public MapNode(K key, V value) {
+	public MyMapNode(K key, V value) {
 		super();
 		this.key = key;
 		this.value = value;
@@ -53,9 +63,9 @@ public class MapNode<K, V> implements Node<K> {
 	 */
 	public String toString() {
 		StringBuilder myMapNodeString = new StringBuilder();
-		myMapNodeString.append("MyMapNode{" + "K=").append(key).append(" V=").append(value).append('}');
+		myMapNodeString.append("MyMapNode: " + "Key = ").append(key).append(" Value = ").append(value);
 		if (next != null)
-			myMapNodeString.append("->").append(next);
+			myMapNodeString.append(next);
 		return myMapNodeString.toString();
 	}
 }

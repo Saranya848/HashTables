@@ -1,6 +1,7 @@
 package com.hashtable;
-
+import java.util.*;
 public class HashMapMain {
+
 	/**
 	 * main method to implement the methods
 	 * 1. Here we have passed the string and saved it in array of words by converting it into lower case and splitting
@@ -10,8 +11,10 @@ public class HashMapMain {
 	 * 5. Then we add the key and value in the Hashmap
 	 */
 	public static void main(String[] args) {
-		
-		String string = "To be or not to be";
+		Scanner input = new Scanner(System.in);
+		//System.out.println("Enter size of Bucket :" + HashMap.numberOfBucket);
+		System.out.println("Enter String :");	
+		String string = input.nextLine();
 		String[] words = string.toLowerCase().split(" ");
 		
 		HashMap<String, Integer> hashMap = new HashMap<>();
@@ -28,5 +31,6 @@ public class HashMapMain {
 			hashMap.add(word, value);
 		}
 		System.out.println(hashMap);
+		input.close();
 	}
 }
